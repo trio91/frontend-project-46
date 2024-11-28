@@ -1,4 +1,6 @@
-import genDiff from '@hexlet/code';
+import { readFileSync } from 'fs';
+import { resolve } from 'path';
+import { cwd } from 'process';
+import { parse } from './fileParser';
 
-const diff = genDiff(filepath1, filepath2);
-console.log(diff);
+const getFileContent = (pathOfFile) => readFileSync(resolve(cwd(), pathOfFile), 'utf-8');
